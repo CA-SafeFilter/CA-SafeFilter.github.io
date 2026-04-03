@@ -132,7 +132,7 @@
     </div>
   </section>
   
-
+<!--
 <section class="section">
   <div class="container">
     <div class="columns is-centered has-text-centered">
@@ -148,6 +148,7 @@
     </div>
   </div>
 </section>
+-->
 
 <!-- Abstract -->
 <section class="section">
@@ -156,7 +157,7 @@
       <div class="column is-two-thirds">
         <h2 class="title is-2" id="abstract">Abstract</h2>
         <p class="content is-size-5" style="text-align: justify;">
-          Autonomous docking between Unmanned Aerial Vehicles (UAVs) and ground robots is essential for heterogeneous systems, yet most existing approaches target wheeled platforms whose limited mobility constrains exploration in complex terrains. Quadruped robots offer superior adaptability but undergo frequent posture variations, making it difficult to provide a stable landing surface for UAVs. To address these challenges, we propose an autonomous UAV&ndash;quadruped docking framework for GPS-denied environments. On the quadruped side, a Hybrid Internal Model with Horizontal Alignment (HIM-HA), learned via deep reinforcement learning, actively stabilizes the torso to provide a level platform. On the UAV side, a three-phase strategy is adopted, consisting of long-range acquisition with a median-filtered YOLOv8 detector, close-range tracking with a constraint-aware controller that integrates a Nonsingular Fast Terminal Sliding Mode Controller (NFTSMC) and a logarithmic Barrier Function (BF) to guarantee finite-time error convergence under field-of-view (FOV) constraints, and terminal descent guided by a Safety Period (SP) mechanism that jointly verifies tracking accuracy and platform stability. The proposed framework is validated in both simulation and real-world scenarios, successfully achieving docking on outdoor staircases higher than 17&nbsp;cm and rough slopes steeper than 30&deg;.
+          In hierarchical quadruped navigation, high-level body-twist commands are tracked imperfectly by the low-level locomotion controller, especially on rough or slippery terrain, making nominal-command-level safety certificates unreliable.We propose a context-aware robust safety filter that explicitly accounts for this execution mismatch. A terrain-context descriptor and a tracking-residual descriptor are combined to construct an online anisotropic uncertainty set that bounds the execution mismatch between commanded and realized body twist.Using this set, we derive a robust barrier-tightening condition and formulate a minimally invasive quadratic-program shield.We establish one-step forward safety under calibrated uncertainty bounds, monotone safe-set contraction, and robustness to calibration conservatism. Simulations in Isaac Gym across mixed terrains and hardware experiments on a Unitree A1 show near-zero collision rates with substantially reduced intervention relative to fixed and isotropic baselines, and zero-collision realworld traversal using simulation-calibrated coefficients.
         </p>
       </div>
     </div>
@@ -165,21 +166,22 @@
 
 
 
-<h2 class="title is-2" style="text-align: center;">HIM-HA Simulation Validation</h2>
+<h2 class="title is-2" style="text-align: center;">Simulation Validation</h2>
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width is-centered has-text-centered">
-        <video controls autoplay loop muted playsinline src="./resources/stair_himha.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video controls autoplay loop muted playsinline src="./resources/sim1top.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
       </div>
     <!--<div class="columns is-centered">-->
       <div class="column is-full-width is-centered has-text-centered">
-        <video controls autoplay loop muted playsinline src="./resources/slople_himha.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video controls autoplay loop muted playsinline src="./resources/sim1side.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
       </div>
     </div>
   </div>
 </section>
 
+<!--
 <h2 class="title is-2" style="text-align: center;">UAV-Quadruped Docking in Gazebo</h2>
 <section class="section">
   <div class="container">
@@ -241,7 +243,7 @@
     </div>
   </div>
 </section>
-
+-->
 
 
 </body>
